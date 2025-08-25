@@ -1,0 +1,44 @@
+.item-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.item {
+    margin-bottom: 1em;
+}
+
+.label {
+    padding: 1em;
+    background-color: #020a1a;
+    border-radius: 0.5em;
+    transition: all 0.4s ease-in-out;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.label h4 {
+    font-size: 1rem;
+    margin: 0;
+    transition: all 0.4s ease-in-out;
+}
+
+.slider {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+}
+
+.label:hover {
+    background-color: #033757;
+}
+
+.label:hover .slider {
+    max-height: 200px; /* Adjust based on the content height */
+    opacity: 1;
+}
+
+.label:hover h4 {
+    margin-bottom: 0.5em;
+}

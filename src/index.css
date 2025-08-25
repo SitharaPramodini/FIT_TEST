@@ -1,0 +1,378 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  background-color: #000000;
+}
+
+nav{
+  background-color: #020a1a;
+}
+
+.btn{
+  background-color: #ff6000;
+  letter-spacing: 1px;
+  border-radius: 50px;
+}
+.btn:hover{
+  background-color: #f83d00;
+}
+
+.home{
+  height: auto;
+}
+
+/* Typewriter effect */
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* Blinking cursor effect */
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.typewriter {
+  display: inline-block;
+  overflow: hidden; /* Ensures that extra text is hidden during animation */
+  white-space: nowrap; /* Ensures text stays in one line */
+  position: relative;
+  opacity: 0; /* Start hidden until it comes into view */
+  font-size: inherit; /* Ensures the typewriter text matches the surrounding text */
+}
+
+.typewriter.animate {
+  opacity: 1; /* Make the text visible when animation starts */
+  animation: typing 5s steps(30) 1, step-end infinite; /* Run typing once, cursor blinks after */
+}
+
+/* Optional: Add responsive adjustments */
+@media (max-width: 768px) {
+  .typewriter {
+    font-size: 2rem; /* Adjusts font size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .typewriter {
+    font-size: 1.3rem; /* Adjusts font size further for mobile */
+  }
+}
+
+/**/
+
+/* Gradient CSS for Card */
+.card {
+  width: 31%;
+  background: Linear-gradient(-45deg, #ecc7c5, #aaaff4,
+#f0aaa9, #c1c5f9, #f1c4c3);
+  background-size: 400% 400%;
+}
+.card:hover {
+  animation: moveGradient 4s ease infinite;  /* Apply the moving animation on hover */
+}
+/* Keyframes for moving the gradient */
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 50%; /* Gradually move the gradient across */
+  }
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  .card{
+    width: 95%;
+  }
+}
+span.typewriter.pb-4.animate {
+  position: relative; /* Needed for the absolute positioning of the pseudo-element */
+  display: inline-block; /* Ensures the element behaves like an inline-block */
+  padding-bottom: 0.5rem; /* Adds space for the border to appear */
+}
+
+span.typewriter.pb-4.animate::after {
+  content: ''; /* Creates a blank pseudo-element */
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 1.5rem; /* Makes the border 1.5rem from the right */
+  height: 0.5rem; /* Sets the thickness of the border */
+  background-color: #ff6000; /* Color of the border */
+  animation: blinkBorder 0.4s infinite; /* Apply the blinking animation */
+}
+
+/* Keyframes for the blinking effect */
+@keyframes blinkBorder {
+  0%, 100% {
+    opacity: 1; /* Fully visible */
+  }
+  50% {
+    opacity: 0; /* Invisible in the middle of the animation */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Card animation: slide from bottom */
+.card-container {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.9s ease-in-out;
+}
+
+.card-container.cards-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.7s ease-in-out;
+}
+
+.cards-visible .card-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card-animate.delay-1 {
+  transition-delay: 0.4s;
+}
+
+.card-animate.delay-2 {
+  transition-delay: 0.7s;
+}
+
+.card-animate.delay-3 {
+  transition-delay: 1s;
+}
+
+
+
+
+
+
+
+.icon {
+  font-size: 3.5rem; /* Adjust this for the icon size */
+  transition: transform 0.3s ease-in-out; /* Smooth transition for transform */
+}
+.card:hover .icon {
+  transform: scale(1.2) rotate(5deg); /* Zoom in and rotate by 30 degrees */
+}
+
+/* p {
+  transition: transform 0.3s ease-in-out; 
+}
+h2{
+  transition: transform 0.3s ease-in-out; 
+}
+.card:hover p {
+  transform: scale(1.05);
+}
+.card:hover h2 {
+  transform: scale(1.1); 
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.blob {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 500px;
+  border-radius: 100%;
+  background-image: linear-gradient(#2e62e5 10%, #254797);
+  filter: blur(250px);
+  transition: all 450ms ease-out;
+  position: fixed;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  transform: translate(calc(-50% + 15px), -50%);
+  z-index: -1;
+ }
+.arricon {
+  transition: transform 0.3s ease-in-out; /* Smooth transition for transform */
+}
+.card2:hover .arricon {
+  transform: rotate(-40deg); /* Zoom in and rotate by 30 degrees */
+}
+.num {
+  transition: color 0.3s ease-in-out; /* Smooth transition for color */
+}
+.card2:hover .num {
+  color: #ff6000; /* Zoom in and rotate by 30 degrees */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* contact us  */
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+    /* scale: 0.5; */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+    /* scale: 1; */
+  }
+}
+@keyframes appearDiscover {
+  from {
+    opacity: 0;
+    /* transform: translateX(100px); */
+    scale: 0.5;
+  }
+  to {
+    opacity: 1;
+    /* transform: translateX(0px); */
+    scale: 1;
+  }
+}
+@keyframes appearleft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+    /* scale: 0.5; */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+    /* scale: 1; */
+  }
+}
+
+.anim {
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 20%;
+}
+
+.left-anim{
+  animation: appearleft linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
+}
+
+.animicon{
+  animation: appearDiscover linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
+}
+
+
+.home{
+  animation: appearleft linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+
+.cyberleft{
+  animation: appearDiscover linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* customizing scrollbar  */
+::-webkit-scrollbar {
+  width: 0.3rem;
+}
+::-webkit-scrollbar {
+  height: 0rem; 
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ff6000;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #9c3c01;
+}
+
+.blurred-box{
+  filter: blur(16px);
+
+}
+
+.blurred-box:after{
+
+ filter: blur(16px);
+}

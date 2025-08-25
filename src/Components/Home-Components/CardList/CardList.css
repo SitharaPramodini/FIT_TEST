@@ -1,0 +1,130 @@
+@keyframes appearCards {
+    from {
+      opacity: 0;
+      /* transform: translateX(-100px); */
+      scale: 0.5;
+    }
+    to {
+      opacity: 1;
+      /* transform: translateX(0px); */
+      scale: 1;
+    }
+  }
+
+.listcard {
+  animation: appearCards linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
+
+  transition: transform 1.2s ease; /* Slower transition for scaling */
+  cursor: pointer;
+}
+
+
+canvas{
+  visibility: hidden;
+  transition: opacity 0.01s ease, visibility 0.30s ease; /* Smooth transition */
+}
+.listcard:hover canvas{
+  visibility: visible;
+}
+
+
+.listcard:hover {
+  transform: scale(1.05); /* Apply scale on hover */
+  transition: transform 1.2s ease; /* Apply a slower transition for scaling on hover */
+}
+
+
+
+
+.circuit {
+  /* position: relative; */
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+  overflow: hidden;
+  position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: "100%";
+        height: "100%";
+        opacity: 0.3;
+}
+
+.circuit-video {
+  object-fit: cover; /* Ensures the video covers the div */
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0; /* Initially, the video is invisible */
+  pointer-events: none; /* Prevent video interaction */
+  transition: opacity 0.3s ease; /* Smooth fade-in on hover */
+}
+
+.listcard:hover .circuit-video {
+  opacity: 1; /* Make the video visible when hovering over the card */
+}
+
+.listcard:hover .circuit-video.playing {
+  animation: play-video 1s forwards;
+}
+
+/* Keyframe to play the video */
+@keyframes play-video {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Play the video on hover */
+.listcard:hover .circuit-video {
+  opacity: 1;
+}
+
+.listcard:hover .circuit-video {
+  animation: play-video 5s forwards;
+}
+
+
+
+
+
+
+/* card hover  */
+.listcard {
+  --c: #ff6000; /* the border color */
+  --b: 2px;     /* the border thickness */
+  --g: 5px;     /* the gap on hover */
+  
+  --_g: #0000 25%, var(--c) 0;
+
+  /* Transparent background (adjust opacity here) */
+  background: 
+    conic-gradient(from 180deg at top var(--b) right var(--b), var(--_g))
+    var(--_i, 200%) 0 / 200% var(--_i, var(--b)) no-repeat,
+    conic-gradient(at bottom var(--b) left var(--b), var(--_g))
+    0 var(--_i, 200%) / var(--_i, var(--b)) 200% no-repeat;
+
+  background-color: var(--background-color);
+  /* border-radius: 12px; Add rounded corners here */
+  transition: 0.6s, background-position 0.6s 0.6s, transform 0.8s ease;
+  cursor: pointer;
+}
+
+.listcard {
+  transition: transform 0.8s ease;
+}
+
+.listcard:hover {
+  --_i: 100%;
+  transition: 0.6s, background-size 0.6s 0.6s;
+  transform: scale(1.05);
+  /* border-radius: 12px; Maintain radius on hover */
+}

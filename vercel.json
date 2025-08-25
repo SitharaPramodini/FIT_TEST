@@ -1,0 +1,9 @@
+{
+    "rewrites": [
+      {
+        "source": "/fit/(.*)",
+        "destination": "/fit/index.html"
+      }
+    ]
+  }
+  

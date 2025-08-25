@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fentonsit.lk/sitemap.xml

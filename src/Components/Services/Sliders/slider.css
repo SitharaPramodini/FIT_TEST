@@ -1,0 +1,94 @@
+/* Keyframes for scrolling animation */
+@keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-170%); /* Adjust to fit card width and spacing */
+    }
+  }
+  
+  /* Sliding container animation */
+  .animate-scroll {
+    display: flex;
+    animation: scroll 40s linear infinite; /* Adjust duration for smoother speed */
+    will-change: transform;
+    
+  }
+  
+  /* Pause animation when hovering over any card */
+  .group:hover .animate-scroll {
+    animation-play-state: paused; /* Pause animation on hover */
+  }
+  
+  /* Individual card styling */
+  .scard {
+    flex: 0 0 auto; /* Prevent cards from shrinking or growing */
+    width: 15rem; /* Width of the card */
+    height: 7.5rem; /* Height of the card */
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem; /* Space between cards */
+    position: relative; /* Needed for the hover effect */
+    overflow: hidden;
+  }
+  
+  /* Outer wrapper for visible area */
+  .slider-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  /* Scaling effect on hover */
+  .scard:hover img {
+    transform: scale(1.2); /* Slightly enlarge the image */
+    transition: transform 0.3s ease; /* Smooth transition */
+  }
+  
+  /* Ensures images stay inside the card */
+  .scard img {
+    width: 100%; /* Ensures the image fills the card */
+    height: auto;
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+  }
+  
+
+  /* why comX animation */
+
+  .animate-on-scroll {
+    opacity: 1;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* hr animation  */
+/* 
+.trans--grow{
+  -webkit-transition: width 1s ease-out; 
+  transition: width 1s  ease-out;
+  width : 0%;
+}
+.grow{
+  width:100%;
+}
+.hr1{
+  margin-left:0;
+}
+hr{
+  margin-top: 20px;
+  padding: 2px 0;
+  border: none;
+  background-color: rgb(250, 150, 0);
+  letter-spacing: 5px;
+} */

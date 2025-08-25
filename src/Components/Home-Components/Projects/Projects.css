@@ -1,0 +1,96 @@
+* { 
+    box-sizing : border-box;
+    /* font-family : "Poppins", sans-serif; */
+  }
+  
+  .container {
+    position : relative;
+    /* width : 1100px; */
+    /* display : flex; */
+    align-items : center;
+    justify-content : center;
+    flex-wrap : warp;
+    padding : 30px;  
+  }
+  
+
+  /* Make sure proj-card has a high enough z-index for hover effects */
+  .container .proj-card {
+    position: relative;
+    /* width: 237px; */
+    height: 215px;
+    /* background-color: #fff; */
+    margin: 30px 10px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    transition: 0.3s ease-in-out;
+    border-radius: 15px;
+    z-index: 1;
+}
+  .container .proj-card:hover {
+    height : 320px;    
+  }
+  
+  
+  .container .proj-card .image {
+    position : relative;
+    width : 260px;
+    height : 260px;
+    
+    top : -27%;
+    left: -12px;
+    /* box-shadow : 0 5px 20px rgba(0,0,0,0.2); */
+    z-index : 1;
+  }
+  
+  .container .proj-card .image img {
+    max-width : 100%;
+    border-radius : 5px;
+  }
+  
+/* Ensure the content visibility and opacity transition works on hover */
+.container .proj-card .content {
+    position: relative;
+    top: -5rem;
+    padding: 10px 1px;
+    color: #111;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease-in-out;
+}
+  
+/* Trigger content visibility when proj-card is hovered */
+.container .proj-card:hover .content {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0.2s;  /* Adjust if necessary */
+}
+
+
+
+
+
+
+
+
+
+
+/* navigation buttons */
+.swiper-wrapper{
+    margin-top: 2rem;
+}
+.swiper-button-next {
+    top: 13rem !important;
+    color: #fff !important;
+    font-weight: bolder;
+    text-shadow: #000000 3px 0px 8px;
+}
+.swiper-button-prev {
+    top: 13rem !important;
+    color: #fff !important;
+    font-weight: bolder;
+    text-shadow: #000000 3px 0px 8px;
+}
