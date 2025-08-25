@@ -135,12 +135,12 @@ function AppRoutes() {
     trackPageView(location.pathname);
 
     // Reload only once when navigating to "/awards"
-    if (location.pathname === "/awards" && !sessionStorage.getItem("awardsPageReloaded")) {
-      sessionStorage.setItem("awardsPageReloaded", "true");
-      window.location.reload();
-    } else if (location.pathname !== "/awards") {
-      sessionStorage.removeItem("awardsPageReloaded");
-    }
+    // if (location.pathname === "/awards" && !sessionStorage.getItem("awardsPageReloaded")) {
+    //   sessionStorage.setItem("awardsPageReloaded", "true");
+    //   window.location.reload();
+    // } else if (location.pathname !== "/awards") {
+    //   sessionStorage.removeItem("awardsPageReloaded");
+    // }
   }, [location]);
 
   return (
